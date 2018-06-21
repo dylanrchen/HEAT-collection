@@ -13,4 +13,5 @@ resources:
         #!/bin/bash
         echo "Running boot script" > /tmp/1.txt
         apt-get update && apt-get -y install python3-pip python3-dev
-        pip3 install tensorflow
+        pip3 install tensorflow keras scipy pandas torch opencv-python mxnet
+        
