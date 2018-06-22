@@ -30,7 +30,7 @@ def generate(pack,instance,indent_level,instancename,keyname):
     script = appendastring(script,"pip3 install numpy",commandindent)
     script = appendastring(script,"pip3 install pandas",commandindent)
     script = appendastring(script,"pip3 install matplotlib",commandindent)
-
+    script = appendastring(script,"pip3 install Cython",commandindent)
     # these libraries are ml libraries, suppose the user doesn't know how to install ml libraries
     if "tensorflow" in packages:
         script = appendastring(script,"pip3 install tensorflow", commandindent)
@@ -46,5 +46,14 @@ def generate(pack,instance,indent_level,instancename,keyname):
         script = appendastring(script,"pip3 install torch",commandindent)
     if "mxnet" in packages:
         script = appendastring(script,"pip3 install mxnet",commandindent)
-    if ""
-    return None
+    # cv libraries
+    if "cv2" in packages:
+        script = appendastring(script,"pip3 install opencv-python",commandindent)
+    if "yolo" in packages or "darknetpy" in packages:
+        script = appendastring(script,"pip3 install darknetpy",commandindent)
+    #  nlp libraries
+    if "word2vec" in packages:
+        script = appendastring(script,"pip3 install word2vec",commandindent)
+    if "ntlk" in packages:
+        script = appendastring(script,"pip3 install ntlk",commandindent)
+    return script
