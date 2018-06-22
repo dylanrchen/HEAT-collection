@@ -51,9 +51,18 @@ def generate(pack,instance,indent_level,instancename,keyname):
         script = appendastring(script,"pip3 install opencv-python",commandindent)
     if "yolo" in packages or "darknetpy" in packages:
         script = appendastring(script,"pip3 install darknetpy",commandindent)
+    if "mahotas" in packages:
+        script = appendastring(script,"pip3 install mahotas",commandindent)        
+
     #  nlp libraries
     if "word2vec" in packages:
         script = appendastring(script,"pip3 install word2vec",commandindent)
-    if "ntlk" in packages:
-        script = appendastring(script,"pip3 install ntlk",commandindent)
+    if "nltk" in packages:
+        script = appendastring(script,"pip3 install nltk",commandindent)
+    if "textblob" in packages:
+        script = appendastring(script,"pip3 install textblob",commandindent)
+    if "corenlp" in packages:
+        script = appendastring(script,"pip3 install corenlp", commandindent)
+    if "gensim" in packages:
+        script = appendastring(script,"pip3 install gensim",commandindent)
     return script
